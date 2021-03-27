@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5d1276f-c1c1-4729-b97a-0487328d6c47" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a5d1276f-c1c1-4729-b97a-0487328d6c47" name="Default Changelist" comment="added search btn">
       <change beforePath="$PROJECT_DIR$/WeatherApp" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApp/weather_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApp/weather_app.py" afterDir="false" />
     </list>
@@ -75,6 +74,14 @@
       <option name="presentableId" value="Default" />
       <updated>1616782908903</updated>
     </task>
+    <task id="LOCAL-00001" summary="added search btn">
+      <created>1616844156611</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1616844156612</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -88,5 +95,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added search btn" />
+    <option name="LAST_COMMIT_MESSAGE" value="added search btn" />
   </component>
 </project>
