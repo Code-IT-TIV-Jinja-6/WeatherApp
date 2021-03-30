@@ -1,10 +1,9 @@
 from tkinter import *
 import tkinter as tk
 import requests
-import json
 import tkinter.messagebox
 # import tinker as a whole and after import tkinter as tk
-#added tkinter.message box for error handling display message
+# added tkinter.message box for error handling display message
 # adding functionality to our app
 
 base = Tk()
@@ -43,8 +42,8 @@ def search_weather():
     try:
         if['cod'] != '400':
             y = x['main']
-            temp_High = y['temp_max']
-            temp_Low = y['temp_min']
+            temp_High = round(y['temp_max'] - 273.15)
+            temp_Low = round(y['temp_min'] - 273.15)
             pressure_value = y['pressure']
             hum_value = y['humidity']
 
@@ -67,14 +66,18 @@ def search_weather():
 
 button_search = tk.Button(text="Search", bg="white", command=search_weather)
 
-##function for closing app via menu
+# function for closing app via menu
+
+
 def close_app():
     closeapp = tkinter.messagebox.askyesno("Group 6 Weather App", "Do you want to exit App?")
-    if closeapp>0:
+    if closeapp > 0:
         base.destroy()
         return
 
-##additional function for displaying credits in menu
+# additional function for displaying credits in menu
+
+
 def credits_func():
     credits_func = tkinter.messagebox.showinfo(title="Credits", message='''Made with love by Group 6 CIT TIV
 ***Mohammed
@@ -87,9 +90,9 @@ GPL V4 License 2021''')
     return
 
 
-##tkinter gui formatting
+# tkinter gui formatting
 
-##menu bars
+# menu bars
 menubar = Menu(base) 
 base.configure(menu=menubar)
 submenu1= Menu(menubar)
@@ -122,6 +125,10 @@ des_rs = Label(text="", width=20, font=("bold", 20), bg="yellow")
 coun = Label(text="Country :", width=20, font=("bold", 20), bg="yellow")
 coun_rs = Label(text="", width=20, font=("bold", 20), bg="yellow")
 
+footer_1 = Label(text="Temperature is measured in Degrees Celsius")
+footer_2 = Label(text="Pressure in Pascals (Pa)")
+footer_3 = Label(text="Humidity is measured in grams Per Kilogram of air(g/Kg)")
+
 # the grid lay out
 title_1.grid(row=0, column=2)
 title_2.grid(row=1, column=2)
@@ -139,5 +146,8 @@ desc.grid(row=7, column=2)
 des_rs.grid(row=7, column=3)
 coun.grid(row=8, column=2)
 coun_rs.grid(row=8, column=3)
+footer_1.grid(row=9, column=2)
+footer_2.grid(row=10, column=2)
+footer_3.grid(row=11, column=2)
 # to make the app run until its closed
 base.mainloop()
