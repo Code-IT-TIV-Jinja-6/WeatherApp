@@ -2,6 +2,7 @@ from tkinter import *
 import tkinter as tk
 import requests
 import tkinter.messagebox
+from PIL import ImageTk, Image
 # import tinker as a whole and after import tkinter as tk
 # added tkinter.message box for error handling display message
 # adding functionality to our app
@@ -10,19 +11,23 @@ base = Tk()
 
 # we configure our app title and dimensions and background colour
 base.title("Weather App Group 6")
-base.configure(bg="yellow")
-base.geometry("780x480")
-# configure our rows and columns
-base.rowconfigure(0, minsize=50)
-base.columnconfigure([0, 1, 2, 3, 4], minsize=4)
-
+base.configure(bg="blue")
+base.geometry("700x600")
+img = Image.open("weather.png")
+img = img.resize((150, 150))
+img = ImageTk.PhotoImage(img)
 
 '''start our fields and labels which will be displaying
 the data'''
 # title labels
-title_1 = Label(text="Group 6 Weather App", width=25, font=("bold", 30), bg="yellow")
+title_1 = Label(text="Group 6 Weather App", width=15, font=("bold", 30), bg="blue")
 
-title_2 = Label(text="Enter City name ", width=32, font=("italics", 15), bg="yellow")
+weather_logo = Label(base, image=img, bg="blue")
+
+title_2 = Label(text="Enter City name ", width=32, font=("italics", 15), bg="blue")
+
+search_city = Entry(text="Search for city")
+
 # Search field and button in grid format
 city_name = StringVar()
 search_city = tk.Entry(textvariable=city_name, text="Search for city")
@@ -93,7 +98,7 @@ GPL V4 License 2021''')
 # tkinter gui formatting
 
 # menu bars
-menubar = Menu(base) 
+menubar = Menu(base)
 base.configure(menu=menubar)
 submenu1= Menu(menubar)
 submenu2= Menu(menubar)
@@ -105,49 +110,50 @@ submenu2.add_command(label="About", command=credits_func)
 
 # temp output and label
 
-temp_high = Label(text="Temp(high) :", width=20, font=("bold", 20), bg="yellow")
-temp_high_rs = Label(text="", width=20, font=("bold", 20), bg="yellow")
+temp_high = Label(text="Temp(high) :", width=20, font=("bold", 20), bg="blue")
+temp_high_rs = Label(text="", width=20, font=("bold", 20), bg="blue")
 
-temp_low = Label(text="Temp(low) :", width=20, font=("bold", 20), bg="yellow")
-temp_low_rs = Label(text="", width=20, font=("bold", 20), bg="yellow")
+temp_low = Label(text="Temp(low) :", width=20, font=("bold", 20), bg="blue")
+temp_low_rs = Label(text="", width=20, font=("bold", 20), bg="blue")
 # pressure label and fetched data
-pres = Label(text="Pressure :", width=20, font=("bold", 20), bg="yellow")
-pres_rs = Label(text="", width=20, font=("bold", 20), bg="yellow")
+pres = Label(text="Pressure :", width=20, font=("bold", 20), bg="blue")
+pres_rs = Label(text="", width=20, font=("bold", 20), bg="blue")
 # humidity label and data
-hum = Label(text="Humidity :", width=20, font=("bold", 20), bg="yellow")
-hum_rs = Label(text="", width=20, font=("bold", 20), bg="yellow")
+hum = Label(text="Humidity :", width=20, font=("bold", 20), bg="blue")
+hum_rs = Label(text="", width=20, font=("bold", 20), bg="blue")
 
 # description
-desc = Label(text="Description :", width=20, font=("bold", 20), bg="yellow")
-des_rs = Label(text="", width=20, font=("bold", 20), bg="yellow")
+desc = Label(text="Description :", width=20, font=("bold", 20), bg="blue")
+des_rs = Label(text="", width=20, font=("bold", 20), bg="blue")
 # country
 
-coun = Label(text="Country :", width=20, font=("bold", 20), bg="yellow")
-coun_rs = Label(text="", width=20, font=("bold", 20), bg="yellow")
+coun = Label(text="Country :", width=20, font=("bold", 20), bg="blue")
+coun_rs = Label(text="", width=20, font=("bold", 20), bg="blue")
 
-footer_1 = Label(text="Temperature is measured in Degrees Celsius")
-footer_2 = Label(text="Pressure in Pascals (Pa)")
-footer_3 = Label(text="Humidity is measured in grams Per Kilogram of air(g/Kg)")
+footer_1 = Label(text="Temperature is measured in Degrees Celsius", bg="blue")
+footer_2 = Label(text="Pressure in Pascals (Pa)", bg="blue")
+footer_3 = Label(text="Humidity is measured in grams Per Kilogram of air(g/Kg)",bg="blue")
 
 # the grid lay out
 title_1.grid(row=0, column=2)
-title_2.grid(row=1, column=2)
-search_city.grid(row=2, column=2)
-button_search.grid(row=2, column=3)
-temp_high.grid(row=3, column=2)
-temp_high_rs.grid(row=3, column=3)
-temp_low.grid(row=4, column=2)
-temp_low_rs.grid(row=4, column=3)
-pres.grid(row=5, column=2)
-pres_rs.grid(row=5, column=3)
-hum.grid(row=6, column=2)
-hum_rs.grid(row=6, column=3)
-desc.grid(row=7, column=2)
-des_rs.grid(row=7, column=3)
-coun.grid(row=8, column=2)
-coun_rs.grid(row=8, column=3)
-footer_1.grid(row=9, column=2)
-footer_2.grid(row=10, column=2)
-footer_3.grid(row=11, column=2)
+weather_logo.grid(row=1,column=2)
+title_2.grid(row=2, column=2)
+search_city.grid(row=3, column=2)
+button_search.grid(row=3, column=3)
+temp_high.grid(row=4, column=2)
+temp_high_rs.grid(row=4, column=3)
+temp_low.grid(row=5, column=2)
+temp_low_rs.grid(row=5, column=3)
+pres.grid(row=6, column=2)
+pres_rs.grid(row=6, column=3)
+hum.grid(row=7, column=2)
+hum_rs.grid(row=7, column=3)
+desc.grid(row=8, column=2)
+des_rs.grid(row=8, column=3)
+coun.grid(row=9, column=2)
+coun_rs.grid(row=9, column=3)
+footer_1.grid(row=10, column=2)
+footer_2.grid(row=11, column=2)
+footer_3.grid(row=12, column=2)
 # to make the app run until its closed
 base.mainloop()
