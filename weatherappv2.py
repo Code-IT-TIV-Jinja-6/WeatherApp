@@ -11,7 +11,7 @@ base = Tk()
 
 # we configure our app title and dimensions and background colour
 base.title("Weather App Group 6")
-base.configure(bg="blue")
+base.configure(bg="#90DFD6")
 base.geometry("700x600")
 img = Image.open("weather.png")
 img = img.resize((150, 150))
@@ -20,11 +20,11 @@ img = ImageTk.PhotoImage(img)
 '''start our fields and labels which will be displaying
 the data'''
 # title labels
-title_1 = Label(text="Group 6 Weather App", width=15, font=("bold", 30), bg="blue")
+title_1 = Label(text="Group 6 Weather App", width=15, font=("bold", 30), bg="#90DFD6")
 
-weather_logo = Label(base, image=img, bg="blue")
+weather_logo = Label(base, image=img, bg="#90DFD6")
 
-title_2 = Label(text="Enter City name ", width=32, font=("italics", 15), bg="blue")
+title_2 = Label(text="Enter City name ", width=32, font=("italics", 15), bg="#90DFD6")
 
 search_city = Entry(text="Search for city")
 
@@ -110,29 +110,29 @@ submenu2.add_command(label="About", command=credits_func)
 
 # temp output and label
 
-temp_high = Label(text="Temp(high) :", width=20, font=("bold", 20), bg="blue")
-temp_high_rs = Label(text="", width=20, font=("bold", 20), bg="blue")
+temp_high = Label(text="Temp(high) :", width=20, font=("bold", 20), bg="#90DFD6")
+temp_high_rs = Label(text="", width=20, font=("bold", 20), bg="#90DFD6")
 
-temp_low = Label(text="Temp(low) :", width=20, font=("bold", 20), bg="blue")
-temp_low_rs = Label(text="", width=20, font=("bold", 20), bg="blue")
+temp_low = Label(text="Temp(low) :", width=20, font=("bold", 20), bg="#90DFD6")
+temp_low_rs = Label(text="", width=20, font=("bold", 20), bg="#90DFD6")
 # pressure label and fetched data
-pres = Label(text="Pressure :", width=20, font=("bold", 20), bg="blue")
-pres_rs = Label(text="", width=20, font=("bold", 20), bg="blue")
+pres = Label(text="Pressure :", width=20, font=("bold", 20), bg="#90DFD6")
+pres_rs = Label(text="", width=20, font=("bold", 20), bg="#90DFD6")
 # humidity label and data
-hum = Label(text="Humidity :", width=20, font=("bold", 20), bg="blue")
-hum_rs = Label(text="", width=20, font=("bold", 20), bg="blue")
+hum = Label(text="Humidity :", width=20, font=("bold", 20), bg="#90DFD6")
+hum_rs = Label(text="", width=20, font=("bold", 20), bg="#90DFD6")
 
 # description
-desc = Label(text="Description :", width=20, font=("bold", 20), bg="blue")
-des_rs = Label(text="", width=20, font=("bold", 20), bg="blue")
+desc = Label(text="Description :", width=20, font=("bold", 20), bg="#90DFD6")
+des_rs = Label(text="", width=20, font=("bold", 20), bg="#90DFD6")
 # country
 
-coun = Label(text="Country :", width=20, font=("bold", 20), bg="blue")
-coun_rs = Label(text="", width=20, font=("bold", 20), bg="blue")
+coun = Label(text="Country :", width=20, font=("bold", 20), bg="#90DFD6")
+coun_rs = Label(text="", width=20, font=("bold", 20), bg="#90DFD6")
 
-footer_1 = Label(text="Temperature is measured in Degrees Celsius", bg="blue")
-footer_2 = Label(text="Pressure in Pascals (Pa)", bg="blue")
-footer_3 = Label(text="Humidity is measured in grams Per Kilogram of air(g/Kg)",bg="blue")
+footer_1 = Label(text="Temperature is measured in Degrees Celsius", bg="#90DFD6")
+footer_2 = Label(text="Pressure in Pascals (Pa)", bg="#90DFD6")
+footer_3 = Label(text="Humidity is measured in grams Per Kilogram of air(g/Kg)",bg="#90DFD6")
 
 # the grid lay out
 title_1.grid(row=0, column=2)
