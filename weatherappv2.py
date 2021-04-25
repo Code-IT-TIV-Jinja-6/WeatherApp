@@ -20,7 +20,7 @@ img = ImageTk.PhotoImage(img)
 '''start our fields and labels which will be displaying
 the data'''
 # title labels
-title_1 = Label(text="Group 6 Weather App", width=15, font=("bold", 30), bg="#90DFD6")
+title_1 = Label(text="Group 6 Weather App", width=20, font=("bold", 30), bg="#90DFD6")
 
 weather_logo = Label(base, image=img, bg="#90DFD6")
 
