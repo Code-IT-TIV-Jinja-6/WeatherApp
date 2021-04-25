@@ -21,9 +21,10 @@ img = ImageTk.PhotoImage(img)
 '''start our fields and labels which will be displaying
 the data'''
 # title labels
-title_1 = Label(text="Group 6 Weather App", width=20, font=("bold", 30), bg="#90DFD6")
+title_1 = Label(text="Group 6 Weather App", width=20, font=("bold", 30), bg="white")
 
-current_date = Label(text=datetime.now().date(), width=20, font=("bold", 30), bg="#90DFD6")
+current_date = Label(text=datetime.now().date(), width=20, font=("bold", "30"), bg="white")
+current_date.place(x=400, y=400)
 
 weather_logo = Label(base, image=img, bg="#90DFD6")
 
@@ -141,8 +142,8 @@ footer_3 = Label(text="Humidity is measured in grams Per Kilogram of air(g/Kg)",
 title_1.grid(row=0, column=2)
 current_date.grid(row=0, column=3)
 weather_logo.grid(row=1,column=2)
-title_2.grid(row=2, column=2)
-search_city.grid(row=3, column=2)
+title_2.grid(row=1, column=3)
+search_city.grid(row=1, column=3)
 button_search.grid(row=3, column=3)
 temp_high.grid(row=4, column=2)
 temp_high_rs.grid(row=4, column=3)
