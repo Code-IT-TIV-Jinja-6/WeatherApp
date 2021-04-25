@@ -13,7 +13,7 @@ base = Tk()
 # we configure our app title and dimensions and background colour
 base.title("Weather App Group 6")
 base.configure(bg="#90DFD6")
-base.geometry("700x600")
+base.geometry("800x600")
 img = Image.open("weather.png")
 img = img.resize((150, 150))
 img = ImageTk.PhotoImage(img)
