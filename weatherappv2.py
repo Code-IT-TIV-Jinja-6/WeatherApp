@@ -3,6 +3,7 @@ import tkinter as tk
 import requests
 import tkinter.messagebox
 from PIL import ImageTk, Image
+from datetime import datetime
 # import tinker as a whole and after import tkinter as tk
 # added tkinter.message box for error handling display message
 # adding functionality to our app
@@ -21,6 +22,8 @@ img = ImageTk.PhotoImage(img)
 the data'''
 # title labels
 title_1 = Label(text="Group 6 Weather App", width=20, font=("bold", 30), bg="#90DFD6")
+
+current_date = Label(text=datetime.now().date(), width=20, font=("bold", 30), bg="#90DFD6")
 
 weather_logo = Label(base, image=img, bg="#90DFD6")
 
@@ -136,6 +139,7 @@ footer_3 = Label(text="Humidity is measured in grams Per Kilogram of air(g/Kg)",
 
 # the grid lay out
 title_1.grid(row=0, column=2)
+current_date.grid(row=0, column=3)
 weather_logo.grid(row=1,column=2)
 title_2.grid(row=2, column=2)
 search_city.grid(row=3, column=2)
