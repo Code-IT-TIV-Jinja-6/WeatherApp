@@ -37,6 +37,10 @@ city_name = StringVar()
 search_city = tk.Entry(textvariable=city_name, text="Search for city")
 
 
+def call(event):
+    search_weather()
+
+
 def search_weather():
     api_key = "14ed2a78adcbcbfe1ac9d1ffb8c5eea6"
     base_url = "https://api.openweathermap.org/data/2.5/weather?"
@@ -94,7 +98,6 @@ def credits_func():
 ***Hassan
 ***Moses
 ***Francis
-
 GPL V4 License 2021''')
     return
 
@@ -160,5 +163,10 @@ coun_rs.grid(row=9, column=3)
 footer_1.grid(row=10, column=2)
 footer_2.grid(row=11, column=2)
 footer_3.grid(row=12, column=2)
+
+
+base.bind("<Return>", call)
+
+
 # to make the app run until its closed
 base.mainloop()
